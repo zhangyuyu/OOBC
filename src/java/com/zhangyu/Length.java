@@ -18,6 +18,9 @@ public class Length {
 
         return this.value == length.value ;
     }
+    public static Length add(Length first, Length second){
+        return new Length(first.value + second.value);
+    }
 
     public static Length feet(int value){
         return new Length(value * FEET.getRate());
