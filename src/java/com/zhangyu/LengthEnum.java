@@ -1,7 +1,11 @@
 package com.zhangyu;
 
 public enum LengthEnum {
-    MILE(1760*3*12),YARD(3*12),FEET(12),INCH(1);
+    UNIT(1),
+    INCH(UNIT.rate),
+    FEET(12*INCH.rate),
+    YARD(3*FEET.rate),
+    MILE(1760*YARD.rate);
 
     private int rate;
     LengthEnum(int rate) {

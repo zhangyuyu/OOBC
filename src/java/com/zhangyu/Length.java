@@ -1,12 +1,12 @@
 package com.zhangyu;
 
-abstract class Length {
-    protected int value;
-    protected int rate;
+import static com.zhangyu.LengthEnum.*;
 
-    public Length(int value, int rate) {
+public class Length {
+    private final int value;
+
+    private Length(int value) {
         this.value = value;
-        this.rate = rate;
     }
 
     @Override
@@ -16,7 +16,23 @@ abstract class Length {
 
         Length length = (Length) o;
 
-        return this.value * this.rate == length.value * length.rate;
+        return this.value == length.value ;
+    }
+
+    public static Length feet(int value){
+        return new Length(value * FEET.getRate());
+    }
+
+    public static Length inch(int value){
+        return new Length(value * INCH.getRate());
+    }
+
+    public static Length mile(int value){
+        return new Length(value * MILE.getRate());
+    }
+
+    public static Length yard(int value){
+        return new Length(value * YARD.getRate());
     }
 
 }
