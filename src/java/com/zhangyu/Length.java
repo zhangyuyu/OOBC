@@ -18,8 +18,8 @@ public class Length {
 
         return this.value == length.value ;
     }
-    public static Length add(Length first, Length second){
-        return new Length(first.value + second.value);
+    public Length add(Length another){
+        return new Length(this.value + another.value);
     }
 
     public static Length feet(int value){
