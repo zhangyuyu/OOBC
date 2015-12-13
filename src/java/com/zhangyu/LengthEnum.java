@@ -1,5 +1,9 @@
 package com.zhangyu;
 
+import java.util.Collections;
+
+import static java.util.Arrays.sort;
+
 public enum LengthEnum {
     UNIT(1),
     INCH(UNIT.rate),
@@ -14,5 +18,11 @@ public enum LengthEnum {
 
     public int getRate() {
         return rate;
+    }
+
+    public static LengthEnum[] getLengthEnumValues() {
+        LengthEnum[] values = LengthEnum.values();
+        sort(values, Collections.<LengthEnum>reverseOrder());
+        return values;
     }
 }
